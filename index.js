@@ -29,4 +29,5 @@ addButton.addEventListener("click", () => {
 
   // f. <li>にCSSを当てるために className を設定する
   li.className = "todo-li";
+  // test
 });
