@@ -1,33 +1,54 @@
-// 1.  テキストボックスDOM要素を取得し、cosole.logで表示
-const inputElement = document.getElementById("add-input");
-console.log(inputElement);
+// // 1.  テキストボックスDOM要素を取得し、console.logで表示
+// const inputElement = document.getElementById("add-input");
+// console.log(inputElement);
 
-// 2. ボタンDOM要素を取得し、console.logで表示
-const addBottom = document.getElementById("add-btn");
-console.log(addBottom);
+// const { createElement } = require("react");
+
+// // 2. ボタンDOM要素を取得し、console.logで表示
+// const addBottom = document.getElementById("add-btn");
+// console.log(addBottom);
+
+// addBottom.addEventListener("click", () => {
+//     alert("ボタンが押されたよ");
+//     alert(inputElement.value);
+//     const li = document.createElement("li");
+//     todoList.appendChild(li);
+//     li.innerHTML = "ほげほげ";
+//     li.className = "todo-li";
+// })
+
+// const inputElement = document.getElementById("add-input");
+// const addButton = document.getElementById("add-btn");
+// const todoList = document.getElementById("todo-list");
+
+// const addTodo = () => {
+//   const li = document.createElement("li");
+//   todoList.appendChild(li);
+//   li.innerHTML = "ほげほげ";
+//   li.className = "todo-li";
+// };
+
 
 const inputElement = document.getElementById("add-input");
 const addButton = document.getElementById("add-btn");
-const todoList = document.getElementById("todo-list"); // ul要素も取得しておく
+const todoList = document.getElementById("todo-list");
 
-// 3. ボタンが押されたときの処理を作成していく
-addButton.addEventListener("click", () => {
-  // a. ボタンが押されたか確認する
-  alert("ボタンが押されたよ");
-
-  // b. テキストボックスの中身を表示させるように変更する
-  alert(inputElement.value);
-
-  // c. <li>要素を新しく作成する
+const addTodo = () => {
   const li = document.createElement("li");
-
-  // d. <ul>要素の中に、作成した<li>を追加する
   todoList.appendChild(li);
+//   li.innerHTML =inputElement.value + "<button>DELETE</button>";
 
-  // e. <li>の中にテキストを入れる
-  li.innerHTML = "ほげほげ";
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "DELETE";
 
-  // f. <li>にCSSを当てるために className を設定する
+  li.appendChild = inputElement.value;
+  li.appendChild(deleteButton);
   li.className = "todo-li";
-  // test
+};
+todoList.addEventListener("click", (e) => {
+  if (e.target.tagName === "BUTTON") {
+    e.target.parentElement.remove();
+  }
 });
+
+addButton.addEventListener("click", addTodo);
