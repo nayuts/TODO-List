@@ -34,21 +34,30 @@ const addButton = document.getElementById("add-btn");
 const todoList = document.getElementById("todo-list");
 
 const addTodo = () => {
+  if (inputElement.value.trim() === "") {
+  alert("TODOを入力してください");
+  inputElement.value = "";
+  return;
+  }
+
   const li = document.createElement("li");
   todoList.appendChild(li);
-//   li.innerHTML =inputElement.value + "<button>DELETE</button>";
+  li.innerHTML =inputElement.value;
 
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "DELETE";
 
-  li.appendChild = inputElement.value;
+  // li.appendChild = inputElement.value;
   li.appendChild(deleteButton);
   li.className = "todo-li";
+
+  inputElement.value = "";
 };
 todoList.addEventListener("click", (e) => {
   if (e.target.tagName === "BUTTON") {
     e.target.parentElement.remove();
   }
 });
+
 
 addButton.addEventListener("click", addTodo);

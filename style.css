@@ -1,3 +1,6 @@
+/* * {
+    margin: 0 auto;
+} */
 .content {
     width: 700px;
     margin: 0 auto;
@@ -8,9 +11,10 @@
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #d1d1d1;
+    /* margin: 0 auto; */
 }
 
-.todo-area-title {
+.todo-title {
     color: #4f80eb;
     font-size: 20px;
     font-weight: bold;
